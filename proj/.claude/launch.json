@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "frontend", "run", "dev", "--", "--port", "5173"],
+      "port": 5173
+    },
+    {
+      "name": "frontend-mock",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "set VITE_USE_MOCK=true&& npm --prefix frontend run dev -- --port 5174"],
+      "port": 5174
+    },
+    {
+      "name": "backend",
+      "runtimeExecutable": "mamba",
+      "runtimeArgs": ["run", "-n", "VinAI", "uvicorn", "src.main:app", "--port", "8000"],
+      "port": 8000
+    }
+  ]
+}

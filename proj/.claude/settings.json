@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(/docs/guide/**)",
+      "Edit(/btc-reference/**)",
+      "Edit(/.github/**)",
+      "Edit(/LICENSE)",
+      "Edit(/SECURITY.md)",
+      "Edit(/CONTRIBUTING.md)",
+      "Edit(/CODE_OF_CONDUCT.md)",
+      "Read(./.env)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(* --no-verify*)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/_pyrun.sh scripts/log_hook.py --tool=claude",
+            "shell": "bash"
+          }
+        ]
+      }
+    ]
+  }
+}
