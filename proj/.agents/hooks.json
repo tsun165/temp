@@ -1,0 +1,12 @@
+{
+  "ai-log": {
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "bash scripts/_pyrun.sh scripts/log_antigravity.py --hook",
+        "commandWindows": "cmd /d /c scripts\\_pyrun.cmd scripts\\log_antigravity.py --hook",
+        "timeout": 15
+      }
+    ]
+  }
+}
